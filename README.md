@@ -1,4 +1,4 @@
-# Project L0ki (PC#1: Ryzen 7 9800X3D + RTX 2080 Ti)
+# Project L0ki (L0ki's PC: Ryzen 7 9800X3D + RTX 2080 Ti)
 
 A **measurement-first** optimization hub for **stable, low-latency VALORANT**:
 - prioritize **frame-time consistency** (1%/0.1% lows, spike frequency)
