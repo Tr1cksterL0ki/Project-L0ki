@@ -1,60 +1,76 @@
-# PC-Tuning (Esports / VALORANT) — Stability-first, Measurement-first
+# Project L0ki (PC#1: Ryzen 7 9800X3D + RTX 2080 Ti)
 
-This repository is a **de-risked** tuning guide for **stable low-latency VALORANT performance**.
-It prioritizes:
-- **Consistent frametimes** over fragile peak benchmarks
-- **Reversible changes** with rollback steps
-- **Security + anti-cheat compatibility** (Vanguard-friendly)
-- **Measurement before belief**
+A **measurement-first** optimization hub for **stable, low-latency VALORANT**:
+- prioritize **frame-time consistency** (1%/0.1% lows, spike frequency)
+- reduce **end-to-end latency** where it’s measurable (render queue, clocks, input stability)
+- avoid “tweaks” that are **security regressions**, **anti-cheat hostile**, or **hard to roll back**
 
-> ⚠️ Do not “apply everything.” Change **one variable at a time**, measure, and keep only what improves *your* frametimes/latency.
+> This repo is tailored to **PC#1** (Ryzen 7 9800X3D + RTX 2080 Ti). Most items still apply generally, but the defaults and examples assume an AM5 X3D CPU and an NVIDIA Turing GPU.
 
-## Target system
-This fork is tailored to **PC#1: Ryzen 7 9800X3D + RTX 2080 Ti**.  
-Start here: [valorant-profile.md](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/pc1-valorant-profile.md)
+---
 
-## What changed vs the legacy guide
-The previous “kitchen sink” tuning guide was **removed** from this repo because it included high-risk / low-evidence tweaks
-(security disablement, kernel-driver hacks, fragile installer edits, etc.).
+## Core principles
 
-A short explanation and migration pointers are here:
-- [legacy.md](docs/legacy.md)
+1. **Stability > peak benchmarks** (esports cares about spikes, not one good run).
+2. **One change at a time**. Always keep a rollback path (restore point / notes).
+3. **No anti-cheat bypasses.** If a step weakens platform security or relies on loading vulnerable drivers, it’s out-of-scope for VALORANT.
+4. **Prefer documented mechanisms** over folklore (especially around timers/interrupts).
 
-## Quick Start (highest ROI, lowest risk)
+---
 
-### 1) Measure a baseline
-- Record frametime consistency ([PresentMon](https://github.com/GameTechDev/PresentMon) / [CapFrameX](https://www.capframex.com/)) in a repeatable scenario.
-- In VALORANT, enable network graphs and watch **packet loss** and **jitter**.
+## Quick start (highest ROI / lowest risk)
 
-### 2) Fix the big three
-1. **Enable NVIDIA Reflex** in VALORANT (*On* to start).
-2. Set a **stable FPS cap** you can hold (reduce spikes; don’t run permanently at 99% GPU).
-3. If using a wireless mouse: move the dongle to a **USB 2.0 extension** away from USB 3 devices/cables.
+### A. Game + GPU (do these first)
+- **VALORANT:** enable **NVIDIA Reflex: ON** (test **ON + BOOST** only if you confirm GPU downclocking / frametime variance).
+  - NVIDIA Reflex overview:  
+    https://www.nvidia.com/en-us/geforce/news/reflex-low-latency-platform/
+- Use a **frame cap you can hold** with clean 1% lows. If you use VRR (G-SYNC/FreeSync), cap a few FPS below max refresh (e.g., **237 for 240 Hz**).
+- **RTX 2080 Ti note:** if you see frequency oscillation during play, try setting **Power management mode → Prefer maximum performance** *for VALORANT only* (NVIDIA Control Panel per-game profile), then re-test frametime variance.
 
-### 3) Cut the noise
-- Close RGB suites, overlays, capture tools you don’t need mid-match.
-- Keep Windows fully supported and patched (avoid Preview/insider builds on a competitive PC).
+### B. Network (the “dying too fast” reality check)
+- Riot explains peeker’s advantage as a sum of frametime + one-way lag + server frametime + interpolation delay:  
+  https://playvalorant.com/en-us/news/game-updates/04-on-peeker-s-advantage-ranked/
+- If you see packet-loss icons or inconsistent fights, follow Riot’s network instability guidance (enable graphs, try Ethernet, adjust **Network Buffering**):  
+  https://playvalorant.com/en-us/news/game-updates/valorant-game-and-network-instability-basics/
 
-## Sections
-- **PC#1 profile**: docs/pc1-valorant-profile.md
-- **Ryzen X3D basics**: docs/configure-ryzen-x3d.md
-- **GPU (NVIDIA)**: docs/configure-nvidia.md
-- **USB & peripherals**: docs/usb-peripherals.md
-- **VALORANT network**: docs/valorant-network.md
-- **Registry options (safe, reversible)**: docs/registry-opts.md
-- **Windows Update strategy**: docs/windows-update-strategy.md
-- **Research & methodology (advanced)**: docs/research.md
+### C. Peripherals / USB
+- If you use a **wireless 2.4 GHz mouse/keyboard**, keep the dongle away from active USB 3.x ports/cables (USB 3 can interfere with 2.4 GHz).  
+  USB-IF / Intel whitepaper: https://www.usb.org/sites/default/files/327216.pdf
+- Close unnecessary background “peripheral suites” and overlays while playing (RGB suites can add background load and sometimes extra input hooks).
+- Start at **1000 Hz polling** and increase only if frametime remains clean (see: https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/content/peripherals/mouse%20faq.md).
 
-## Principles (read once)
-- **Truth > novelty**: popular tweaks are not automatically real.
-- **Stability-first**: any change that increases WHEA errors, driver resets, or frametime spikes is a regression.
-- **Reversible**: export settings / create restore point before anything wide-impact.
-- **Anti-cheat safe**: avoid kernel-driver hacks and security disablement.
+---
 
-## References (high credibility)
-- Riot on peeker’s advantage and network stability (packet loss/jitter/buffering)
-- Intel on USB 3.0 RF interference with 2.4 GHz wireless dongles
-- NVIDIA on Reflex / latency optimization
-- Microsoft on vulnerable driver blocklist and platform security
+## Start here (docs)
 
-(See the legacy README for additional links; this curated README focuses on what is reliably beneficial for esports gaming.)
+- **Measurement & test workflow:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/measurement.md
+- **VALORANT settings & network buffering:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/valorant.md
+- **Windows settings that are actually worth doing:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/windows.md
+- **USB layout & wireless stability:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/usb.md
+- **BIOS / Ryzen 9800X3D baseline:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/bios_ryzen_9800x3d.md
+- **Do-not-use (unsafe / low-value tweaks):** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/do_not_use.md
+- **Third-party guide notes:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/third_party_guides.md
+
+---
+
+## What changed vs the original upstream hub?
+
+This repo removes or rewrites content that commonly causes harm for competitive PCs:
+- **No RWEverything / vulnerable driver workflows** (high security + Vanguard risk)
+- No “disable all security features” playbooks (Defender off, exploit mitigations off, etc.)
+- No “use ancient Windows builds / enable CSM” suggestions (conflicts with Secure Boot requirements)
+
+---
+
+## Contributing
+
+If you add a tweak, include:
+1) exact location + rollback  
+2) mechanism  
+3) evidence (prefer primary docs)  
+4) a simple A/B test plan  
+
+---
+
+## Changelog
+- https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/CHANGELOG.md
