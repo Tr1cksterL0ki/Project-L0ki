@@ -37,19 +37,19 @@ A **measurement-first** optimization hub for **stable, low-latency VALORANT**:
 - If you use a **wireless 2.4 GHz mouse/keyboard**, keep the dongle away from active USB 3.x ports/cables (USB 3 can interfere with 2.4 GHz).  
   USB-IF / Intel whitepaper: https://www.usb.org/sites/default/files/327216.pdf
 - Close unnecessary background “peripheral suites” and overlays while playing (RGB suites can add background load and sometimes extra input hooks).
-- Start at **1000 Hz polling** and increase only if frametime remains clean (see: https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/content/peripherals/mouse%20faq.md).
+- Start at **1000 Hz polling** and increase only if frametime remains clean (see: [mouse%20faq.md](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/content/peripherals/mouse%20faq.md)).
 
 ---
 
 ## Start here (docs)
 
-- **Measurement & test workflow:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/measurement.md
-- **VALORANT settings & network buffering:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/valorant.md
-- **Windows settings that are actually worth doing:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/windows.md
-- **USB layout & wireless stability:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/usb.md
-- **BIOS / Ryzen 9800X3D baseline:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/bios_ryzen_9800x3d.md
-- **Do-not-use (unsafe / low-value tweaks):** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/do_not_use.md
-- **Third-party guide notes:** https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/third_party_guides.md
+- [**Measurement & test workflow**](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/measurement.md)
+- [**VALORANT settings & network buffering**](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/valorant.md)
+- [**Windows settings that are actually worth doing**](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/windows.md)
+- [**USB layout & wireless stability**](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/usb.md)
+- [**BIOS / Ryzen 9800X3D baseline**](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/bios_ryzen_9800x3d.md)
+- [**Do-not-use (unsafe / low-value tweaks)**](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/do_not_use.md)
+- [**Third-party guide notes**](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/third_party_guides.md)
 
 ---
 
