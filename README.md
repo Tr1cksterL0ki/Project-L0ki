@@ -73,4 +73,4 @@ If you add a tweak, include:
 ---
 
 ## Changelog
-- https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/CHANGELOG.md
+- [CHANGELOG.md](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/CHANGELOG.md)
