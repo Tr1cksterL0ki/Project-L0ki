@@ -5,7 +5,7 @@ A **measurement-first** optimization hub for **stable, low-latency VALORANT**:
 - reduce **end-to-end latency** where it’s measurable (render queue, clocks, input stability)
 - avoid “tweaks” that are **security regressions**, **anti-cheat hostile**, or **hard to roll back**
 
-> This repo is tailored to **PC#1** (Ryzen 7 9800X3D + RTX 2080 Ti). Most items still apply generally, but the defaults and examples assume an AM5 X3D CPU and an NVIDIA Turing GPU.
+> This repo is tailored to **L0ki's PC** (Ryzen 7 9800X3D + RTX 2080 Ti). Most items still apply generally, but the defaults and examples assume an AM5 X3D CPU and an NVIDIA Turing GPU.
 
 ---
 
