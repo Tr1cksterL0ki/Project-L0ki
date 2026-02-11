@@ -11,7 +11,7 @@ It prioritizes:
 
 ## Target system
 This fork is tailored to **PC#1: Ryzen 7 9800X3D + RTX 2080 Ti**.  
-Start here: **docs/pc1-valorant-profile.md**
+Start here: [docs/pc1-valorant-profile.md](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/pc1-valorant-profile.md)
 
 ## What changed vs the legacy guide
 The previous “kitchen sink” tuning guide was **removed** from this repo because it included high-risk / low-evidence tweaks
