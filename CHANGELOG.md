@@ -1,7 +1,7 @@
 # Changelog
 
 ## 2026-02-11
-- Retargeted repo to **PC#1** (Ryzen 7 9800X3D + RTX 2080 Ti).
+- Retargeted repo to **L0ki's PC** (Ryzen 7 9800X3D + RTX 2080 Ti).
 - Rewrote README quick-start to emphasize **Reflex + stable caps** and low-risk wins.
 - Replaced BIOS guide with a **Ryzen 7 9800X3D** baseline (UEFI/Secure Boot/TPM + EXPO-first).
 - Removed the standalone **xHCI IMOD** content directory (kept “do-not-use” safety note instead).
