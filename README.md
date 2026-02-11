@@ -11,19 +11,19 @@ It prioritizes:
 
 ## Target system
 This fork is tailored to **PC#1: Ryzen 7 9800X3D + RTX 2080 Ti**.  
-Start here: [docs/pc1-valorant-profile.md](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/pc1-valorant-profile.md)
+Start here: [valorant-profile.md](https://github.com/Tr1cksterL0ki/Project-L0ki/blob/main/docs/pc1-valorant-profile.md)
 
 ## What changed vs the legacy guide
 The previous “kitchen sink” tuning guide was **removed** from this repo because it included high-risk / low-evidence tweaks
 (security disablement, kernel-driver hacks, fragile installer edits, etc.).
 
 A short explanation and migration pointers are here:
-- **docs/legacy.md**
+- [legacy.md](docs/legacy.md)
 
 ## Quick Start (highest ROI, lowest risk)
 
 ### 1) Measure a baseline
-- Record frametime consistency (PresentMon / CapFrameX) in a repeatable scenario.
+- Record frametime consistency ([PresentMon](https://github.com/GameTechDev/PresentMon) / [CapFrameX](https://www.capframex.com/)) in a repeatable scenario.
 - In VALORANT, enable network graphs and watch **packet loss** and **jitter**.
 
 ### 2) Fix the big three
