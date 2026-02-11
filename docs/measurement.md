@@ -31,7 +31,7 @@ This repo is **measurement-first**. If you can’t measure it, treat it as a hyp
 - Using LatencyMon numbers as a universal “game latency score” (it’s primarily a DPC/ISR diagnostic tool)
 - Judging “hitreg” feel without controlling for peeker’s advantage + packet loss + frametime variance
 
-## Recommended experiment order (PC#1: 9800X3D + RTX 2080 Ti)
+## Recommended experiment order (L0ki's PC: 9800X3D + RTX 2080 Ti)
 1) Fix packet loss / Wi‑Fi issues (Ethernet, router placement, buffering settings)
 2) Reflex ON + stable FPS cap you can actually hold
 3) Remove background bloat (startup apps, overlays, RGB suites)
